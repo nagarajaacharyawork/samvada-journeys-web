@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowRight,
@@ -41,26 +40,6 @@ import expRetreat from "@/assets/exp-retreat.jpg";
 import expCoastal from "@/assets/exp-coastal.jpg";
 import aboutPortrait from "@/assets/about-portrait.jpg";
 
-export const Route = createFileRoute("/")({
-  component: Home,
-  head: () => ({
-    meta: [
-      { title: "Samvada Journeys — Explore India Like a Local" },
-      {
-        name: "description",
-        content:
-          "Curated, entrepreneur-led experiential travel across India. Hidden places, local food, artisans, and authentic culture — never a tourist trail.",
-      },
-      { property: "og:title", content: "Samvada Journeys — Explore India Like a Local" },
-      {
-        property: "og:description",
-        content:
-          "Curated, entrepreneur-led experiential travel across India. Hidden places, local food, artisans, and authentic culture.",
-      },
-    ],
-  }),
-});
-
 const NAV = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
@@ -91,7 +70,7 @@ function useReveal() {
   }, []);
 }
 
-function Home() {
+export function Home() {
   useReveal();
   return (
     <div className="bg-background text-foreground">
